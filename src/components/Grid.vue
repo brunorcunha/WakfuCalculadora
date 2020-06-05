@@ -22,7 +22,7 @@ import Bloco from './Bloco'
       tipoSpell: { type: String, default: '' }
     },
     data: () => ({
-      tamanho: 11
+      tamanho: 7
     }),
     computed: {
       meio () {
@@ -52,7 +52,7 @@ import Bloco from './Bloco'
         if (x === this.meio && y === this.meio) return 'meio'
         const formula = Math.abs(this.meio - x) + Math.abs(this.meio - y)
         if (formula <= this.corpoACorpo) return 'cac'
-        if (x === 1 || y === 1 || x === this.tamanho || y === this.tamanho) return 'borda'
+        // if (x === 1 || y === 1 || x === this.tamanho || y === this.tamanho) return 'borda'
         return 'dist'
       }
     }

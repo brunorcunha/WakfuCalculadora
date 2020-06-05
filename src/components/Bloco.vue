@@ -9,7 +9,7 @@
       <div v-on="spell === 'borda' || spell === 'meio' ? null : on" :class="`bloco ${posicao} ${spell}`"></div>
     </template>
     <v-row no-gutters class="pa-3">
-      <v-col class="px-1">
+      <v-col class="pa-1" md="6" sm="12">
         <v-card class="elevation-5">
           <v-subheader class="deep-orange accent-4 white--text px-4">
             {{ $t('danoBase') }}
@@ -41,14 +41,16 @@
 
             <v-divider />
 
-            <v-list-item class="fontMenor">
-              <v-list-item-content>
-                <v-list-item-title>{{ $t('dominioelementar') }}</v-list-item-title>
-              </v-list-item-content>
-              +{{ MaestriaElemental }}%
-            </v-list-item>
+            <template v-if="MaestriaElemental > 0">
+              <v-list-item class="fontMenor">
+                <v-list-item-content>
+                  <v-list-item-title>{{ $t('dominioelementar') }}</v-list-item-title>
+                </v-list-item-content>
+                +{{ MaestriaElemental }}%
+              </v-list-item>
 
-            <v-divider />
+              <v-divider />
+            </template>
 
             <v-list-item class="fontMenor">
               <v-list-item-content>
@@ -121,19 +123,21 @@
 
             <v-divider />
 
-            <v-list-item>
-              <v-list-item-content>
-                <v-list-item-title>{{ $t('danoResistenciaBerserk') }}</v-list-item-title>
-              </v-list-item-content>
-              <b>{{ danoResistenciaBerserk }}</b>
-            </v-list-item>
+            <template v-if="MaestriaBerserk > 0">
+              <v-list-item>
+                <v-list-item-content>
+                  <v-list-item-title>{{ $t('danoResistenciaBerserk') }}</v-list-item-title>
+                </v-list-item-content>
+                <b>{{ danoResistenciaBerserk }}</b>
+              </v-list-item>
 
-            <v-divider />
+              <v-divider />
+            </template>
 
           </v-list>
         </v-card>
       </v-col>
-      <v-col class="px-1">
+      <v-col class="pa-1" md="6" sm="12">
         <v-card>
           <v-subheader class="deep-orange accent-4 white--text px-4">
             {{ $t('danoCritico') }}
@@ -165,14 +169,16 @@
 
             <v-divider />
 
-            <v-list-item class="fontMenor">
-              <v-list-item-content>
-                <v-list-item-title>{{ $t('dominioelementar') }}</v-list-item-title>
-              </v-list-item-content>
-              +{{ MaestriaElemental }}%
-            </v-list-item>
+            <template v-if="MaestriaElemental > 0">
+              <v-list-item class="fontMenor">
+                <v-list-item-content>
+                  <v-list-item-title>{{ $t('dominioelementar') }}</v-list-item-title>
+                </v-list-item-content>
+                +{{ MaestriaElemental }}%
+              </v-list-item>
 
-            <v-divider />
+              <v-divider />
+            </template>
 
             <v-list-item class="fontMenor">
               <v-list-item-content>
@@ -237,14 +243,16 @@
 
               <v-divider />
 
-              <v-list-item class="fontMenor">
-                <v-list-item-content>
-                  <v-list-item-title>{{ $t('resistencia') }}</v-list-item-title>
-                </v-list-item-content>
-                -{{ 100 - valorResistencia }}%
-              </v-list-item>
+              <template v-if="MaestriaBerserk > 0">
+                <v-list-item class="fontMenor">
+                  <v-list-item-content>
+                    <v-list-item-title>{{ $t('resistencia') }}</v-list-item-title>
+                  </v-list-item-content>
+                  -{{ 100 - valorResistencia }}%
+                </v-list-item>
 
-              <v-divider />
+                <v-divider />
+              </template>
             </template>
 
             <v-list-item>
@@ -256,14 +264,16 @@
 
             <v-divider />
 
-            <v-list-item>
-              <v-list-item-content>
-                <v-list-item-title>{{ $t('criticoResistenciaBerserk') }}</v-list-item-title>
-              </v-list-item-content>
-              <b class="red--text">{{ criticoResistenciaBerserk }}</b>
-            </v-list-item>
+            <template v-if="MaestriaBerserk > 0">
+              <v-list-item>
+                <v-list-item-content>
+                  <v-list-item-title>{{ $t('criticoResistenciaBerserk') }}</v-list-item-title>
+                </v-list-item-content>
+                <b class="red--text">{{ criticoResistenciaBerserk }}</b>
+              </v-list-item>
 
-            <v-divider />
+              <v-divider />
+            </template>
 
           </v-list>
         </v-card>

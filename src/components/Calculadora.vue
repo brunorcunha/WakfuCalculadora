@@ -11,20 +11,18 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col><v-text-field outlined dense hide-details :value="DanoBase" label="Dano" @input="setDanoBase($event)" /></v-col>
-      <v-col><v-text-field outlined dense hide-details :value="DanoCritico" label="Dano Crítico" @input="setDanoCritico($event)" /></v-col>
-      <v-col><v-text-field outlined dense hide-details :value="MaestriaElemental" label="Domínio Elemental" @input="setMaestriaElemental($event)" /></v-col>
-      <v-col><v-text-field outlined dense hide-details :value="Resistencia" label="Resistencia" @input="setResistencia($event)" /></v-col>
-      <v-col><v-text-field outlined dense hide-details :value="MaestriaDistancia" label="Distancia" @input="setMaestriaDistancia($event)" /></v-col>
-      <v-col><v-text-field outlined dense hide-details :value="MaestriaCorpoACorpo" label="Corpo a Corpo" @input="setMaestriaCorpoACorpo($event)" /></v-col>
-    </v-row>
-    <v-row>
-      <v-col><v-text-field outlined dense hide-details :value="MaestriaAlvoUnico" label="Alvo Unico" @input="setMaestriaAlvoUnico($event)" /></v-col>
-      <v-col><v-text-field outlined dense hide-details :value="MaestriaZona" label="Zona" @input="setMaestriaZona($event)" /></v-col>
-      <v-col><v-text-field outlined dense hide-details :value="MaestriaCritico" label="Critico" @input="setMaestriaCritico($event)" /></v-col>
-      <v-col><v-text-field outlined dense hide-details :value="MaestriaCostas" label="Costas" @input="setMaestriaCostas($event)" /></v-col>
-      <v-col><v-text-field outlined dense hide-details :value="MaestriaBerserk" label="Berserk" @input="setMaestriaBerserk($event)" /></v-col>
-      <v-col><v-text-field outlined dense hide-details :value="DanosCausados" label="Danos Causados" @input="setDanosCausados($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="DanoBase" label="Dano" @input="setDanoBase($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="DanoCritico" label="Dano Crítico" @input="setDanoCritico($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaElemental" label="Domínio Elemental" @input="setMaestriaElemental($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="Resistencia" label="Resistencia" @input="setResistencia($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaDistancia" label="Distancia" @input="setMaestriaDistancia($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaCorpoACorpo" label="Corpo a Corpo" @input="setMaestriaCorpoACorpo($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaAlvoUnico" label="Alvo Unico" @input="setMaestriaAlvoUnico($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaZona" label="Zona" @input="setMaestriaZona($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaCritico" label="Critico" @input="setMaestriaCritico($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaCostas" label="Costas" @input="setMaestriaCostas($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaBerserk" label="Berserk" @input="setMaestriaBerserk($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="DanosCausados" label="Danos Causados" @input="setDanosCausados($event)" /></v-col>
     </v-row>
 
     <div>
