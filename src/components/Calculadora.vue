@@ -3,6 +3,14 @@
     <Grid :tipoSpell="tipoSpell" />
 
     <v-row>
+      <v-col>
+        <v-radio-group v-model="tipoSpell" row hide-details label="Feitiço">
+          <v-radio label="Alvo Único" value="st"></v-radio>
+          <v-radio label="Zona" value="zona"></v-radio>
+        </v-radio-group>
+      </v-col>
+    </v-row>
+    <v-row>
       <v-col><v-text-field outlined dense hide-details :value="DanoBase" label="Dano" @input="setDanoBase($event)" /></v-col>
       <v-col><v-text-field outlined dense hide-details :value="DanoCritico" label="Dano Crítico" @input="setDanoCritico($event)" /></v-col>
       <v-col><v-text-field outlined dense hide-details :value="MaestriaElemental" label="Domínio Elemental" @input="setMaestriaElemental($event)" /></v-col>
@@ -22,10 +30,10 @@
     <div>
       <div>
         <div>- Fórmula:</div>
-        <div>[ DANO x DOMÍNIOS x RESISTÊNCIA X DANOSCAUSADOS ]</div>
+        <div>[ DANOBASEOUCRITICO x POSIÇÃO X DOMÍNIOS x (100 - RESISTÊNCIA) x DANOSCAUSADOS ]</div>
         <div>- Variáveis:</div>
-        <div><b>DANO</b> = (DanoBase <span class="red--text">OU</span> DanoCritico)</div>
-        <div><b>DOMÍNIOS</b> = (POSIÇÃO + DominioElemental + DISTANCIAouCORPOACORPO + ALVOUNICOouZONA + DOMINIOCOSTAS + BERSERK + CRITICO)%</div>
+        <div><b>DANOBASEOUCRITICO</b> = (DanoBase <span class="red--text">OU</span> DanoCritico)</div>
+        <div><b>DOMÍNIOS</b> = (100 + DominioElemental + DISTANCIAouCORPOACORPO + ALVOUNICOouZONA + DOMINIOCOSTAS + BERSERK + CRITICO)%</div>
         <div><b>RESISTÊNCIA</b> = (0.8<sup>(Resistencia / 100)</sup>)</div>
         <div><b>DANOSCAUSADOS</b> = (100 + DanosCausados)%</div>
         <div><b>POSIÇÃO</b> = (DanoDeFrente <span class="red--text">OU</span> DanoDeLado <span class="red--text">OU</span> DanoDeCostas)</div>
@@ -35,10 +43,10 @@
         <div><b>BERSERK</b> = <span class="red--text">SE</span> VIDA &lt; 50% <span class="red--text">=&gt;</span> (DominioBerserk) <span class="red--text">SENÃO</span> (0)</div>
         <div><b>CRITICO</b> = <span class="red--text">SE</span> DanoCritico <span class="red--text">=&gt;</span> (DominioCritico) <span class="red--text">SENÃO</span> (0)</div>
         <div>- Exemplo:</div>
-        <div>[ (DanoCritico) x (DanoCostas + DominioElemental + DominioDistancia + DominioAlvoUnico + DominioCostas + DominioBerserk + DominioCritico)% x (0,8 <sup>(Resistencia / 100)</sup>)% x (100 + DanosCausados)% ]</div>
-        <div>[ {{ DanoCritico }} x ({{ DanoCostas }} + {{MaestriaElemental}} + {{ MaestriaDistancia }} + {{ MaestriaAlvoUnico }} + {{ MaestriaCostas }} + {{ MaestriaBerserk }} + {{ MaestriaCritico }})% x (0,8 <sup>({{ Resistencia }} / 100)</sup>)% x (100 + {{ DanosCausados }})% ]</div>
-        <div>[ {{ DanoCritico }} x {{ DanoCostas + MaestriaElemental + MaestriaDistancia + MaestriaAlvoUnico + MaestriaCostas + MaestriaBerserk + MaestriaCritico }}% x {{ (Math.round(Math.pow(this.constante, Resistencia / 100) * 100)) }}% x {{ (100 + DanosCausados) }}% ]</div>
-        <div>= Resultado: {{ Math.ceil((DanoCritico) * ((DanoCostas + MaestriaElemental + MaestriaDistancia + MaestriaAlvoUnico + MaestriaCostas + MaestriaBerserk + MaestriaCritico) / 100) * (Math.pow(this.constante, Resistencia / 100)) * ((100 + DanosCausados) / 100)) }}</div>
+        <div>[ (DanoCritico) x (DanoCostas) x (100 + DominioElemental + DominioDistancia + DominioAlvoUnico + DominioCostas + DominioBerserk + DominioCritico)% x (100 - 0,8 <sup>(Resistencia / 100)</sup>)% x (100 + DanosCausados)% ]</div>
+        <div>[ {{ DanoCritico }} x {{ DanoCostas }}% x (100 + {{MaestriaElemental}} + {{ MaestriaDistancia }} + {{ MaestriaAlvoUnico }} + {{ MaestriaCostas }} + {{ MaestriaBerserk }} + {{ MaestriaCritico }})% x (100 - {{ Math.round((1 - Math.pow(this.constante, Resistencia / 100)) * 100) }})% x (100 + {{ DanosCausados }})% ]</div>
+        <div>[ {{ DanoCritico }} x {{ DanoCostas }}% x {{ 100 + MaestriaElemental + MaestriaDistancia + MaestriaAlvoUnico + MaestriaCostas + MaestriaBerserk + MaestriaCritico }}% x {{ (Math.round(Math.pow(this.constante, Resistencia / 100) * 100)) }}% x {{ (100 + DanosCausados) }}% ]</div>
+        <div>= Resultado: {{ Math.ceil((DanoCostas / 100) * (DanoCritico) * ((100 + MaestriaElemental + MaestriaDistancia + MaestriaAlvoUnico + MaestriaCostas + MaestriaBerserk + MaestriaCritico) / 100) * (Math.pow(this.constante, Resistencia / 100)) * ((100 + DanosCausados) / 100)) }}</div>
       </div>
 
     </div>
@@ -50,7 +58,7 @@ import { mapGetters, mapActions } from 'vuex'
 import Grid from './Grid'
 
 export default {
-  name: 'View',
+  name: 'Calculadora',
   components: { Grid },
   data: () => ({
     constante: 0.800000011920929,

@@ -27,7 +27,7 @@
               <v-list-item-content>
                 <v-list-item-title>{{ traducaoPosicao }}</v-list-item-title>
               </v-list-item-content>
-              +{{ valorPosicao }}%
+              x{{ valorPosicao }}%
             </v-list-item>
 
             <v-divider />
@@ -151,7 +151,7 @@
               <v-list-item-content>
                 <v-list-item-title>{{ traducaoPosicao }}</v-list-item-title>
               </v-list-item-content>
-              +{{ valorPosicao }}%
+              x{{ valorPosicao }}%
             </v-list-item>
 
             <v-divider />
@@ -329,14 +329,17 @@ export default {
     valorRear () {
       return this.ehDanoCostas ? this.MaestriaCostas : 0
     },
+    posicaoReal () {
+      return this.valorPosicao / 100
+    },
     resistenciaReal () {
-      return Math.pow(this.constante, this.Resistencia / 100)
+      return this.Resistencia <= 0 ? 1 : Math.pow(this.constante, this.Resistencia / 100)
     },
     valorResistencia () {
       return Math.round(this.resistenciaReal * 100)
     },
     valorElemental () {
-      return (this.valorPosicao + this.MaestriaElemental + this.valorRear + this.valorSpell + this.valorTipoSpell)
+      return (100 + this.MaestriaElemental + this.valorRear + this.valorSpell + this.valorTipoSpell)
     },
     valorDanosCausados () {
       return (this.DanosCausados + 100) / 100
@@ -345,13 +348,13 @@ export default {
       return (this.valorElemental / 100) * this.DanoBase
     },
     danoSemResistenciaSTR () {
-      return Math.ceil(this.danoSemResistencia * this.valorDanosCausados)
+      return Math.ceil(this.danoSemResistencia * this.valorDanosCausados * this.posicaoReal)
     },
     criticoSemResistencia () {
       return ((this.valorElemental + this.MaestriaCritico) / 100) * this.DanoCritico
     },
     criticoSemResistenciaSTR () {
-      return Math.ceil(this.criticoSemResistencia * this.valorDanosCausados)
+      return Math.ceil(this.criticoSemResistencia * this.valorDanosCausados * this.posicaoReal)
     },
     danoSemResistenciaBerserk () {
       return ((this.valorElemental + this.MaestriaBerserk) / 100) * this.DanoBase
@@ -360,16 +363,16 @@ export default {
       return ((this.valorElemental + this.MaestriaBerserk + this.MaestriaCritico) / 100) * this.DanoCritico
     },
     danoResistencia () {
-      return Math.ceil(this.danoSemResistencia * this.resistenciaReal * this.valorDanosCausados)
+      return Math.ceil(this.danoSemResistencia * this.resistenciaReal * this.valorDanosCausados * this.posicaoReal)
     },
     criticoResistencia () {
-      return Math.ceil(this.criticoSemResistencia * this.resistenciaReal * this.valorDanosCausados)
+      return Math.ceil(this.criticoSemResistencia * this.resistenciaReal * this.valorDanosCausados * this.posicaoReal)
     },
     danoResistenciaBerserk () {
-      return Math.ceil(this.danoSemResistenciaBerserk * this.resistenciaReal * this.valorDanosCausados)
+      return Math.ceil(this.danoSemResistenciaBerserk * this.resistenciaReal * this.valorDanosCausados * this.posicaoReal)
     },
     criticoResistenciaBerserk () {
-      return Math.ceil(this.criticoSemResistenciaBerserk * this.resistenciaReal * this.valorDanosCausados)
+      return Math.ceil(this.criticoSemResistenciaBerserk * this.resistenciaReal * this.valorDanosCausados * this.posicaoReal)
     }
   }
 }
