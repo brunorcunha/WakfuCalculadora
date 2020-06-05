@@ -333,7 +333,7 @@ export default {
       return this.valorPosicao / 100
     },
     resistenciaReal () {
-      return this.Resistencia <= 0 ? 1 : Math.pow(this.constante, this.Resistencia / 100)
+      return this.Resistencia <= 0 ? 1 : (Math.pow(this.constante, this.Resistencia / 100)).toFixed(2)
     },
     valorResistencia () {
       return Math.round(this.resistenciaReal * 100)
