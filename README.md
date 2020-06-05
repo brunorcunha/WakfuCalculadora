@@ -1,4 +1,11 @@
-# wakfu-calculadora
+# Wakfu Calculadora de Dano
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a21091be-926c-49c8-8e2d-39d34efeceee/deploy-status)](https://app.netlify.com/sites/wakfucalculadora/deploys)
+
+<p style="text-align: center;">
+  <a href="https://wakfucalculadora.netlify.app" target="_blank">
+    [ Confira a Demo ]
+  </a>
+</p>
 
 ## Project setup
 ```
