@@ -3,7 +3,7 @@
     open-on-hover
     offset-x
     min-width="500"
-    content-class="elevation-0"
+    content-class="elevation-0 touchevent"
   >
     <template #activator="{ on }">
       <div v-on="spell === 'borda' || spell === 'meio' ? null : on" :class="`bloco ${posicao} ${spell}`"></div>

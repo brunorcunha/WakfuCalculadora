@@ -68,7 +68,7 @@ td {
     height: 15px;
 }
 
-#grid .v-menu__content {
+.v-menu__content.touchevent {
   pointer-events: none !important;
 }
 .fontsmall {
