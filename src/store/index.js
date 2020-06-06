@@ -3,22 +3,24 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state: {
-    DanoBase: 142,
-    DanoCritico: 178,
-    DanosCausados: 10,
-    MaestriaElemental: 1036,
-    MaestriaDistancia: 461,
+    lang: 'pt-BR',
+    DanoBase: 10,
+    DanoCritico: 20,
+    DanosCausados: 0,
+    MaestriaElemental: 0,
+    MaestriaDistancia: 0,
     MaestriaCorpoACorpo: 0,
-    MaestriaAlvoUnico: 186,
-    MaestriaZona: 160,
-    MaestriaCritico: 306,
+    MaestriaAlvoUnico: 0,
+    MaestriaZona: 0,
+    MaestriaCritico: 0,
     MaestriaCostas: 0,
     MaestriaBerserk: 0,
-    Resistencia: 302
+    Resistencia: 0
   },
   getters: {
+    lang: state => state.lang,
     DanoBase: state => state.DanoBase,
     DanoCritico: state => state.DanoCritico,
     DanosCausados: state => state.DanosCausados,
@@ -33,6 +35,7 @@ export default new Vuex.Store({
     Resistencia: state => state.Resistencia
   },
   mutations: {
+    setLang: (state, lang) => { state.lang = lang },
     setDanoBase: (state, DanoBase) => { state.DanoBase = DanoBase },
     setDanoCritico: (state, DanoCritico) => { state.DanoCritico = DanoCritico },
     setDanosCausados: (state, DanosCausados) => { state.DanosCausados = DanosCausados },
@@ -44,7 +47,11 @@ export default new Vuex.Store({
     setMaestriaCritico: (state, MaestriaCritico) => { state.MaestriaCritico = MaestriaCritico },
     setMaestriaCostas: (state, MaestriaCostas) => { state.MaestriaCostas = MaestriaCostas },
     setMaestriaBerserk: (state, MaestriaBerserk) => { state.MaestriaBerserk = MaestriaBerserk },
-    setResistencia: (state, Resistencia) => { state.Resistencia = Resistencia }
+    setResistencia: (state, Resistencia) => { state.Resistencia = Resistencia },
+    initializeStore: (state) => {
+      const LSStore = localStorage.getItem('store')
+      if(LSStore) store.replaceState(Object.assign(state, JSON.parse(LSStore)))
+    }
   },
   actions: {
     setDanoBase ({ commit }, DanoBase) { commit('setDanoBase', parseInt(DanoBase || 0)) },
@@ -61,3 +68,5 @@ export default new Vuex.Store({
     setResistencia ({ commit }, Resistencia) { commit('setResistencia', parseInt(Resistencia || 0)) }
   }
 })
+
+export default store

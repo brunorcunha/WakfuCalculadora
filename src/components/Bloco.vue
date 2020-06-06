@@ -44,7 +44,7 @@
             <template v-if="MaestriaElemental > 0">
               <v-list-item class="fontMenor">
                 <v-list-item-content>
-                  <v-list-item-title>{{ $t('dominioelementar') }}</v-list-item-title>
+                  <v-list-item-title>{{ $t('dominioElemental') }}</v-list-item-title>
                 </v-list-item-content>
                 +{{ MaestriaElemental }}%
               </v-list-item>
@@ -64,7 +64,7 @@
             <template v-if="MaestriaBerserk > 0">
               <v-list-item class="fontMenor">
                 <v-list-item-content>
-                  <v-list-item-title>{{ $t('dominioberserk') }}</v-list-item-title>
+                  <v-list-item-title>{{ $t('dominioBerserk') }}</v-list-item-title>
                 </v-list-item-content>
                 +{{ MaestriaBerserk }}%
               </v-list-item>
@@ -75,7 +75,7 @@
             <template v-if="ehDanoCostas && MaestriaCostas > 0">
               <v-list-item class="fontMenor">
                 <v-list-item-content>
-                  <v-list-item-title>{{ $t('dominiorear') }}</v-list-item-title>
+                  <v-list-item-title>{{ $t('dominioCostas') }}</v-list-item-title>
                 </v-list-item-content>
                 +{{ MaestriaCostas }}%
               </v-list-item>
@@ -86,7 +86,7 @@
             <template v-if="DanosCausados > 0">
               <v-list-item class="fontMenor">
                 <v-list-item-content>
-                  <v-list-item-title>{{ $t('FINAL_DMG_IN_PERCENT') }}</v-list-item-title>
+                  <v-list-item-title>{{ $t('danosCausados') }}</v-list-item-title>
                 </v-list-item-content>
                 x{{ 100 + DanosCausados }}%
               </v-list-item>
@@ -172,7 +172,7 @@
             <template v-if="MaestriaElemental > 0">
               <v-list-item class="fontMenor">
                 <v-list-item-content>
-                  <v-list-item-title>{{ $t('dominioelementar') }}</v-list-item-title>
+                  <v-list-item-title>{{ $t('dominioElemental') }}</v-list-item-title>
                 </v-list-item-content>
                 +{{ MaestriaElemental }}%
               </v-list-item>
@@ -192,7 +192,7 @@
             <template v-if="MaestriaBerserk > 0">
               <v-list-item class="fontMenor">
                 <v-list-item-content>
-                  <v-list-item-title>{{ $t('dominioberserk') }}</v-list-item-title>
+                  <v-list-item-title>{{ $t('dominioBerserk') }}</v-list-item-title>
                 </v-list-item-content>
                 +{{ MaestriaBerserk }}%
               </v-list-item>
@@ -203,7 +203,7 @@
             <template v-if="MaestriaCritico > 0">
               <v-list-item class="fontMenor">
                 <v-list-item-content>
-                  <v-list-item-title>{{ $t('dominiocritico') }}</v-list-item-title>
+                  <v-list-item-title>{{ $t('dominioCritico') }}</v-list-item-title>
                 </v-list-item-content>
                 +{{ MaestriaCritico }}%
               </v-list-item>
@@ -214,7 +214,7 @@
             <template v-if="ehDanoCostas && MaestriaCostas > 0">
               <v-list-item class="fontMenor">
                 <v-list-item-content>
-                  <v-list-item-title>{{ $t('dominiorear') }}</v-list-item-title>
+                  <v-list-item-title>{{ $t('dominioCostas') }}</v-list-item-title>
                 </v-list-item-content>
                 +{{ MaestriaCostas }}%
               </v-list-item>
@@ -225,7 +225,7 @@
             <template v-if="DanosCausados > 0">
               <v-list-item class="fontMenor">
                 <v-list-item-content>
-                  <v-list-item-title>{{ $t('FINAL_DMG_IN_PERCENT') }}</v-list-item-title>
+                  <v-list-item-title>{{ $t('danosCausados') }}</v-list-item-title>
                 </v-list-item-content>
                 x{{ 100 + DanosCausados }}%
               </v-list-item>
@@ -325,13 +325,13 @@ export default {
       return 110
     },
     traducaoSpell () {
-      return (this.spell === 'cac') ? this.$i18n.t('MELEE_DMG') : this.$i18n.t('RANGED_DMG')
+      return (this.spell === 'cac') ? this.$i18n.t('dominioCorpoaCorpo') : this.$i18n.t('dominioDistancia')
     },
     valorSpell () {
       return (this.spell === 'cac') ? this.MaestriaCorpoACorpo : this.MaestriaDistancia
     },
     traducaoTipoSpell () {
-      return (this.tipoSpell === 'st') ? this.$i18n.t('SINGLE_TARGET_DMG') : this.$i18n.t('AOE_DMG')
+      return (this.tipoSpell === 'st') ? this.$i18n.t('dominioAlvoUnico') : this.$i18n.t('dominioZona')
     },
     valorTipoSpell () {
       return (this.tipoSpell === 'st') ? this.MaestriaAlvoUnico : this.MaestriaZona

@@ -1,5 +1,5 @@
 <template>
-  <table>
+  <table id="grid">
     <tr v-for="x in tamanho" :key="`tr${x}`">
       <td v-for="y in tamanho" :key="`td${y}`">
         <Bloco

@@ -68,17 +68,17 @@ td {
     height: 15px;
 }
 
-.v-menu__content {
+#grid .v-menu__content {
   pointer-events: none !important;
 }
 .fontsmall {
     font-size: 12px;
     line-height: 22px;
 }
-.v-list-item--dense, .v-list--dense .v-list-item {
+#grid .v-list-item--dense, .v-list--dense .v-list-item {
     min-height: 30px !important;
 }
-.v-subheader {
+#grid .v-subheader {
     height: 35px;
 }
 .fontMenor {

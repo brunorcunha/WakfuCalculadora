@@ -1,29 +1,32 @@
 <template>
   <v-container>
+    <Idioma />
     <Grid :tipoSpell="tipoSpell" />
 
     <v-row>
       <v-col>
-        <v-radio-group v-model="tipoSpell" row hide-details label="Feitiço">
-          <v-radio label="Alvo Único" value="st"></v-radio>
-          <v-radio label="Zona" value="zona"></v-radio>
+        <v-radio-group v-model="tipoSpell" row hide-details :label="$t('feitico')">
+          <v-radio :label="$t('alvoUnico')" value="st"></v-radio>
+          <v-radio :label="$t('zona')" value="zona"></v-radio>
         </v-radio-group>
       </v-col>
     </v-row>
     <v-row>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="DanoBase" label="Dano" @input="setDanoBase($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="DanoCritico" label="Dano Crítico" @input="setDanoCritico($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaElemental" label="Domínio Elemental" @input="setMaestriaElemental($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="Resistencia" label="Resistencia" @input="setResistencia($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaDistancia" label="Distancia" @input="setMaestriaDistancia($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaCorpoACorpo" label="Corpo a Corpo" @input="setMaestriaCorpoACorpo($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaAlvoUnico" label="Alvo Unico" @input="setMaestriaAlvoUnico($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaZona" label="Zona" @input="setMaestriaZona($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaCritico" label="Critico" @input="setMaestriaCritico($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaCostas" label="Costas" @input="setMaestriaCostas($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaBerserk" label="Berserk" @input="setMaestriaBerserk($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="DanosCausados" label="Danos Causados" @input="setDanosCausados($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="DanoBase" :label="$t('danoBase')" @input="setDanoBase($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="DanoCritico" :label="$t('danoCritico')" @input="setDanoCritico($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaElemental" :label="$t('dominioElemental')" @input="setMaestriaElemental($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="Resistencia" :label="$t('resistencia')" @input="setResistencia($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaDistancia" :label="$t('dominioDistancia')" @input="setMaestriaDistancia($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaCorpoACorpo" :label="$t('dominioCorpoaCorpo')" @input="setMaestriaCorpoACorpo($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaAlvoUnico" :label="$t('dominioAlvoUnico')" @input="setMaestriaAlvoUnico($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaZona" :label="$t('dominioZona')" @input="setMaestriaZona($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaCritico" :label="$t('dominioCritico')" @input="setMaestriaCritico($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaCostas" :label="$t('dominioCostas')" @input="setMaestriaCostas($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaBerserk" :label="$t('dominioBerserk')" @input="setMaestriaBerserk($event)" /></v-col>
+      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="DanosCausados" :label="$t('danosCausados')" @input="setDanosCausados($event)" /></v-col>
     </v-row>
+
+    <hr />
 
     <div>
       <div>
@@ -53,11 +56,12 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import Idioma from './Idioma'
 import Grid from './Grid'
 
 export default {
   name: 'Calculadora',
-  components: { Grid },
+  components: { Idioma, Grid },
   data: () => ({
     constante: 0.800000011920929,
     DanoFrente: 100,
