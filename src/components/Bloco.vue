@@ -9,7 +9,7 @@
       <div v-on="spell === 'borda' || spell === 'meio' ? null : on" :class="`bloco ${posicao} ${spell}`"></div>
     </template>
     <v-row no-gutters class="pa-3">
-      <v-col class="pa-1" md="6" sm="12">
+      <v-col class="pa-1" md="6" sm="12" xs="12">
         <v-card class="elevation-5">
           <v-subheader class="deep-orange accent-4 white--text px-4">
             {{ $t('danoBase') }}
@@ -137,7 +137,7 @@
           </v-list>
         </v-card>
       </v-col>
-      <v-col class="pa-1" md="6" sm="12">
+      <v-col class="pa-1" md="6" sm="12" xs="12">
         <v-card>
           <v-subheader class="deep-orange accent-4 white--text px-4">
             {{ $t('danoCritico') }}

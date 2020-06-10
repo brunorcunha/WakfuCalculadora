@@ -12,18 +12,18 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="DanoBase" :label="$t('danoBase')" @input="setDanoBase($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="DanoCritico" :label="$t('danoCritico')" @input="setDanoCritico($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaElemental" :label="$t('dominioElemental')" @input="setMaestriaElemental($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="Resistencia" :label="$t('resistencia')" @input="setResistencia($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaDistancia" :label="$t('dominioDistancia')" @input="setMaestriaDistancia($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaCorpoACorpo" :label="$t('dominioCorpoaCorpo')" @input="setMaestriaCorpoACorpo($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaAlvoUnico" :label="$t('dominioAlvoUnico')" @input="setMaestriaAlvoUnico($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaZona" :label="$t('dominioZona')" @input="setMaestriaZona($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaCritico" :label="$t('dominioCritico')" @input="setMaestriaCritico($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaCostas" :label="$t('dominioCostas')" @input="setMaestriaCostas($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="MaestriaBerserk" :label="$t('dominioBerserk')" @input="setMaestriaBerserk($event)" /></v-col>
-      <v-col md="2" sm="12"><v-text-field outlined dense hide-details :value="DanosCausados" :label="$t('danosCausados')" @input="setDanosCausados($event)" /></v-col>
+      <v-col md="2" sm="12" xs="12"><v-text-field outlined dense hide-details :value="DanoBase" :label="$t('danoBase')" @input="setDanoBase($event)" /></v-col>
+      <v-col md="2" sm="12" xs="12"><v-text-field outlined dense hide-details :value="DanoCritico" :label="$t('danoCritico')" @input="setDanoCritico($event)" /></v-col>
+      <v-col md="2" sm="12" xs="12"><v-text-field outlined dense hide-details :value="MaestriaElemental" :label="$t('dominioElemental')" @input="setMaestriaElemental($event)" /></v-col>
+      <v-col md="2" sm="12" xs="12"><v-text-field outlined dense hide-details :value="Resistencia" :label="$t('resistencia')" @input="setResistencia($event)" /></v-col>
+      <v-col md="2" sm="12" xs="12"><v-text-field outlined dense hide-details :value="MaestriaDistancia" :label="$t('dominioDistancia')" @input="setMaestriaDistancia($event)" /></v-col>
+      <v-col md="2" sm="12" xs="12"><v-text-field outlined dense hide-details :value="MaestriaCorpoACorpo" :label="$t('dominioCorpoaCorpo')" @input="setMaestriaCorpoACorpo($event)" /></v-col>
+      <v-col md="2" sm="12" xs="12"><v-text-field outlined dense hide-details :value="MaestriaAlvoUnico" :label="$t('dominioAlvoUnico')" @input="setMaestriaAlvoUnico($event)" /></v-col>
+      <v-col md="2" sm="12" xs="12"><v-text-field outlined dense hide-details :value="MaestriaZona" :label="$t('dominioZona')" @input="setMaestriaZona($event)" /></v-col>
+      <v-col md="2" sm="12" xs="12"><v-text-field outlined dense hide-details :value="MaestriaCritico" :label="$t('dominioCritico')" @input="setMaestriaCritico($event)" /></v-col>
+      <v-col md="2" sm="12" xs="12"><v-text-field outlined dense hide-details :value="MaestriaCostas" :label="$t('dominioCostas')" @input="setMaestriaCostas($event)" /></v-col>
+      <v-col md="2" sm="12" xs="12"><v-text-field outlined dense hide-details :value="MaestriaBerserk" :label="$t('dominioBerserk')" @input="setMaestriaBerserk($event)" /></v-col>
+      <v-col md="2" sm="12" xs="12"><v-text-field outlined dense hide-details :value="DanosCausados" :label="$t('danosCausados')" @input="setDanosCausados($event)" /></v-col>
     </v-row>
 
     <hr />
