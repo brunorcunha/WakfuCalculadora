@@ -10,7 +10,7 @@
               class="ma-0"
               v-on="{ ...tooltip, ...menu }"
           >
-            <img :src="getImgUrl($i18n.locale)">
+            <img :src="getImgUrl($i18n.locale)" class="idioma">
           </v-btn>
         </template>
         <span>{{ $t('trocaridioma') }}</span>
@@ -50,7 +50,6 @@ export default {
     mudarIdioma (lang) {
       if (this.$i18n.locale === lang.locale) return
       this.$store.commit('setLang', lang.locale)
-      location.reload()
     },
     getImgUrl (lang) {
       let images = require.context('../assets/', false, /\.png$/)
