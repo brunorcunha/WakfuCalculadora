@@ -51,19 +51,19 @@
                 <v-card-text>
                   <div v-if="hover === 'dano'">{{ $t('formula.danobase') }} <span class="operador">{{ $t('formula.ou') }}</span> {{ $t('formula.danocritico') }}</div>
                   <v-row v-if="hover === 'resistencia'">
-                    <v-col cols="4">
+                    <v-col>
                       <div>(</div>
                       <div class="identacao1">100</div>
                       <div class="identacao2"><span class="red--text">-</span> (1 <span class="red--text">-</span> 0.8<sup>({{ $t('formula.resistencia') }} <span class="red--text">/</span> 100)</sup>) <span class="red--text">x</span> 100</div>
                       <div>) <span class="red--text">%</span></div>
                     </v-col>
 
-                    <v-col cols="4" class="text-center bordasLaterais">
+                    <v-col class="text-center bordasLaterais flex-shrink-1 flex-grow-0">
                       {{ $t('formula.equivalente') }} <br>
                       <span class="red--text">&lt; = &gt;</span>
                     </v-col>
 
-                    <v-col cols="4">
+                    <v-col>
                       0.8<sup>({{ $t('formula.resistencia') }} <span class="red--text">/</span> 100)</sup>
                     </v-col>
                   </v-row>
@@ -88,19 +88,19 @@
                 <v-card-text>
                   <div v-if="hover === 'dano'">{{ DanoBase }} <span class="operador">{{ $t('formula.ou') }}</span> {{ DanoCritico }}</div>
                   <v-row v-if="hover === 'resistencia'">
-                    <v-col cols="4">
+                    <v-col>
                       <div>(</div>
                       <div class="identacao1">100</div>
                       <div class="identacao2"><span class="red--text">-</span> ((1 <span class="red--text">-</span> 0.8<sup>({{ Resistencia }} <span class="red--text">/</span> 100)</sup>) <span class="red--text">x</span> 100)</div>
                       <div>) <span class="red--text">/</span> 100</div>
                     </v-col>
 
-                    <v-col cols="4" class="text-center bordasLaterais">
+                    <v-col class="text-center bordasLaterais flex-shrink-1 flex-grow-0">
                       {{ $t('formula.equivalente') }} <br>
                       <span class="red--text">&lt; = &gt;</span>
                     </v-col>
 
-                    <v-col cols="4">
+                    <v-col>
                       0.8<sup>({{ Resistencia }} <span class="red--text">/</span> 100)</sup>
                     </v-col>
                   </v-row>
