@@ -145,3 +145,10 @@ body {
     border-left: 2px solid #fafafa;
     background-color: #fefefe;
 }
+.operador {
+    color: #F44336 !important;
+    caret-color: #F44336 !important;
+}
+.upper, .operador {
+    text-transform: uppercase;
+}

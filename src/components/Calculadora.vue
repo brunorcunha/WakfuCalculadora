@@ -3,7 +3,7 @@
     <v-row>
       <v-col :cols="$vuetify.breakpoint.smAndDown ? 12 : 4">
         <div class="formula">
-          <div :class="`flutuante ${$vuetify.breakpoint.mdAndDown ? 'mr-n5' : ''}`">
+          <div :class="`flutuante ${$vuetify.breakpoint.mdOnly ? 'mr-n5' : ''}`">
             <Formula />
           </div>
         </div>

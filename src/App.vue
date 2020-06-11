@@ -8,7 +8,7 @@
     >
       <img src="./assets/logo.png" height="60" />
 
-      <v-toolbar-title>Wakfu - Calculadora de Dano</v-toolbar-title>
+      <v-toolbar-title>Wakfu - {{ $t('calculadoraDeDano') }}</v-toolbar-title>
 
       <v-spacer />
 

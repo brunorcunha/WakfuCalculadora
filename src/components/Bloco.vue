@@ -99,7 +99,7 @@
                 <v-list-item-content>
                   <v-list-item-title>{{ $t('subTotal') }}</v-list-item-title>
                 </v-list-item-content>
-                <b>{{ danoSemResistenciaSTR }}</b>
+                <b>{{ danoSemResistenciaSTR | formatNumber }}</b>
               </v-list-item>
 
               <v-divider />
@@ -118,7 +118,7 @@
               <v-list-item-content>
                 <v-list-item-title>{{ $t('danoResistencia') }}</v-list-item-title>
               </v-list-item-content>
-              <b>{{ danoResistencia }}</b>
+              <b>{{ danoResistencia | formatNumber }}</b>
             </v-list-item>
 
             <v-divider />
@@ -128,7 +128,7 @@
                 <v-list-item-content>
                   <v-list-item-title>{{ $t('danoResistenciaBerserk') }}</v-list-item-title>
                 </v-list-item-content>
-                <b>{{ danoResistenciaBerserk }}</b>
+                <b>{{ danoResistenciaBerserk | formatNumber }}</b>
               </v-list-item>
 
               <v-divider />
@@ -142,7 +142,7 @@
           <v-subheader class="deep-orange accent-4 white--text px-4">
             {{ $t('danoCritico') }}
             <v-spacer />
-            <b>{{ DanoCritico }}</b>
+            <b>{{ DanoCritico | formatNumber }}</b>
           </v-subheader>
 
           <v-divider />
@@ -238,7 +238,7 @@
                 <v-list-item-content>
                   <v-list-item-title>{{ $t('subTotalCritico') }}</v-list-item-title>
                 </v-list-item-content>
-                <b>{{ criticoSemResistenciaSTR }}</b>
+                <b>{{ criticoSemResistenciaSTR | formatNumber }}</b>
               </v-list-item>
 
               <v-divider />
@@ -259,7 +259,7 @@
               <v-list-item-content>
                 <v-list-item-title>{{ $t('criticoResistencia') }}</v-list-item-title>
               </v-list-item-content>
-              <b class="red--text">{{ criticoResistencia }}</b>
+              <b class="red--text">{{ criticoResistencia | formatNumber }}</b>
             </v-list-item>
 
             <v-divider />
@@ -269,7 +269,7 @@
                 <v-list-item-content>
                   <v-list-item-title>{{ $t('criticoResistenciaBerserk') }}</v-list-item-title>
                 </v-list-item-content>
-                <b class="red--text">{{ criticoResistenciaBerserk }}</b>
+                <b class="red--text">{{ criticoResistenciaBerserk | formatNumber }}</b>
               </v-list-item>
 
               <v-divider />
