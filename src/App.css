@@ -91,6 +91,9 @@ body {
     font-size: 16px !important;
     color: #DC143C;
 }
+.theme--dark .critico {
+    color: orangered;
+}
 .borderClaro {
     border: 1px solid #eee;
     border-top: 0;
@@ -145,10 +148,21 @@ body {
     border-left: 2px solid #fafafa;
     background-color: #fefefe;
 }
+.theme--dark .bordasLaterais {
+    border-right: 2px solid #454545;
+    border-left: 2px solid #454545;
+    background-color: #424242;
+}
 .operador {
     color: #F44336 !important;
     caret-color: #F44336 !important;
 }
 .upper, .operador {
     text-transform: uppercase;
+}
+.theme--dark.v-application {
+    background: #252525 !important;
+}
+.theme--dark.v-data-table, .theme--dark.v-card, .theme--dark.v-list {
+    background-color: #414141 !important;
 }

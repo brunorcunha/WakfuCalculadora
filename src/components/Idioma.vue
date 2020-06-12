@@ -5,8 +5,6 @@
         <template #activator="{ on: tooltip }">
           <v-btn
               icon
-              small
-              dark
               class="ma-0"
               v-on="{ ...tooltip, ...menu }"
           >

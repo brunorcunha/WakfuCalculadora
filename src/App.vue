@@ -1,34 +1,39 @@
 <template>
-  <v-app>
-    <v-app-bar
-      color="red"
-      dark
-      elevate-on-scroll
-      app
-    >
-      <img src="./assets/logo.png" height="60" />
+  <v-theme-provider root>
+    <v-app>
+      <v-app-bar
+        color="red"
+        dark
+        elevate-on-scroll
+        app
+      >
+        <img src="./assets/logo.png" height="60" />
 
-      <v-toolbar-title>Wakfu - {{ $t('calculadoraDeDano') }}</v-toolbar-title>
+        <v-toolbar-title>Wakfu - {{ $t('calculadoraDeDano') }}</v-toolbar-title>
 
-      <v-spacer />
+        <v-spacer />
 
-      <Idioma />
-    </v-app-bar>
+        <Idioma />
 
-    <v-content>
-      <Calculadora />
-    </v-content>
-  </v-app>
+        <TrocarTema />
+      </v-app-bar>
+
+      <v-content>
+        <Calculadora />
+      </v-content>
+    </v-app>
+  </v-theme-provider>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import Idioma from './components/Idioma'
 import Calculadora from './components/Calculadora'
+import TrocarTema from './components/TrocarTema'
 
 export default {
   name: 'App',
-  components: { Calculadora, Idioma },
+  components: { TrocarTema, Calculadora, Idioma },
   computed: {
     ...mapGetters(['lang'])
   },

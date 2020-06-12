@@ -6,6 +6,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     lang: 'pt-BR',
+    theme: false,
     DanoBase: 10,
     DanoCritico: 20,
     DanosCausados: 0,
@@ -21,6 +22,7 @@ const store = new Vuex.Store({
   },
   getters: {
     lang: state => state.lang,
+    theme: state => state.theme,
     DanoBase: state => state.DanoBase,
     DanoCritico: state => state.DanoCritico,
     DanosCausados: state => state.DanosCausados,
@@ -36,6 +38,7 @@ const store = new Vuex.Store({
   },
   mutations: {
     setLang: (state, lang) => { state.lang = lang },
+    setTheme: (state, theme) => { state.theme = theme },
     setDanoBase: (state, DanoBase) => { state.DanoBase = DanoBase },
     setDanoCritico: (state, DanoCritico) => { state.DanoCritico = DanoCritico },
     setDanosCausados: (state, DanosCausados) => { state.DanosCausados = DanosCausados },

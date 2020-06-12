@@ -39,6 +39,7 @@
           <v-tabs
               v-model="tab"
               background-color="red"
+              slider-color="white"
               dark
               grow
           >
