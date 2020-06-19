@@ -2,36 +2,38 @@
   <v-container>
     <v-row>
       <v-col :cols="$vuetify.breakpoint.smAndDown ? 12 : 4">
-        <div class="formula">
-          <div :class="`flutuante ${$vuetify.breakpoint.mdOnly ? 'mr-n5' : ''}`">
-            <Formula />
+        <v-card outlined class="px-4 py-2">
+          <div class="formula">
+            <div :class="`flutuante ${$vuetify.breakpoint.mdOnly ? 'mr-n5' : ''}`">
+              <Formula />
+            </div>
           </div>
-        </div>
-        <v-row>
-          <Grid :tipoSpell="tipoSpell" />
-        </v-row>
-        <v-row no-gutters>
-          <v-col class="pt-3">
-            <v-label>{{ $t('feitico') }}:</v-label>
-            <v-btn-toggle
-              v-model="tipoSpell"
-              borderless
-              :class="$vuetify.breakpoint.mdAndDown ? null : 'ml-4'"
-              dark
-              dense
-              mandatory
-            >
-              <v-btn value="st" color="red" :class="$vuetify.breakpoint.mdAndDown ? 'px-5' : 'px-6'">
-                <img src="../assets/st.png" class="mr-2" />
-                <span>{{ $t('alvoUnico') }}</span>
-              </v-btn>
-              <v-btn value="zona" color="red" :class="$vuetify.breakpoint.mdAndDown ? 'px-5' : 'px-6'">
-                <img src="../assets/zona.png" class="mr-2" />
-                <span>{{ $t('zona') }}</span>
-              </v-btn>
-            </v-btn-toggle>
-          </v-col>
-        </v-row>
+          <v-row>
+            <Grid :tipoSpell="tipoSpell" />
+          </v-row>
+          <v-row no-gutters>
+            <v-col class="pt-3">
+              <v-label>{{ $t('feitico') }}:</v-label>
+              <v-btn-toggle
+                v-model="tipoSpell"
+                borderless
+                :class="$vuetify.breakpoint.mdAndDown ? null : 'ml-4'"
+                dark
+                dense
+                mandatory
+              >
+                <v-btn value="st" color="red" :class="$vuetify.breakpoint.mdAndDown ? 'px-5' : 'px-6'">
+                  <img src="../assets/st.png" class="mr-2" />
+                  <span>{{ $t('alvoUnico') }}</span>
+                </v-btn>
+                <v-btn value="zona" color="red" :class="$vuetify.breakpoint.mdAndDown ? 'px-5' : 'px-6'">
+                  <img src="../assets/zona.png" class="mr-2" />
+                  <span>{{ $t('zona') }}</span>
+                </v-btn>
+              </v-btn-toggle>
+            </v-col>
+          </v-row>
+        </v-card>
         <Dados />
       </v-col>
       <v-col :cols="$vuetify.breakpoint.smAndDown ? 12 : 8">
